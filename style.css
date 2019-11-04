@@ -1,11 +1,21 @@
+:focus {
+    outline: 0;
+}
+
 body {
     font-family: 'Comfortaa', 'Roboto', sans-serif;
 }
 
-a.brand-logo img.brand-img {
-    height: 1.5em;
+#fun-spinny-boi { transform: rotate(0deg); }
+#fun-spinny-boi.do-thing { animation: spinny-thing 2.5s ease; }
+
+a.brand-logo.brand-img {
     padding: 0;
     margin-top: 0.25em;
+}
+
+a.brand-logo.brand-img img {
+    width: 1.5em;
 }
 
 div.container.add-mt {
@@ -36,6 +46,14 @@ div.card div.prod-image.card-image span.card-title {
 div.card:hover div.prod-image.card-image span.card-title {
     animation: prod-txt-fx-in 0.325s ease-in-out;
     text-shadow: 0 0 0.15em rgba(0, 0, 0, 0.15); transform: scale(1.125);
+}
+
+@keyframes spinny-thing {
+    0%   { transform: rotate(0deg) }
+    10%  { transform: rotate(0.125turn); box-shadow: 0 0 7px rgba(0, 0, 0, 0.2) }
+    30%  { transform: rotate(-0.25turn); box-shadow: 0 0 12px rgba(0, 0, 0, 0.14)  }
+    85% { transform: rotate(2turn); box-shadow: 0 0 7px rgba(0, 0, 0, 0.2) }
+    100% { transform: rotate(2turn); box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2) }
 }
 
 @keyframes prod-img-fx-in {
